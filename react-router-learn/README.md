@@ -21,3 +21,7 @@ yarn add react-router-dom
 ```bash
 yarn start
 ```
+
+## history 库
+
+[history](https://github.com/ReactTraining/history)
