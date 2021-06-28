@@ -22,6 +22,19 @@ yarn add react-router-dom
 yarn start
 ```
 
-## history 库
+## 实现功能 & API
+
+- [x] Router
+  - [x] BroswerRouter
+  - [ ] HistoryRouter
+- [ ] Switch
+- [ ] Route
+- [ ] Link
+
+## 使用 history 库
 
 [history](https://github.com/ReactTraining/history)
+
+## 使用 path-to-regexp 库
+
+[path-to-regexp](https://github.com/pillarjs/path-to-regexp)

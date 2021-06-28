@@ -5,12 +5,14 @@ function createEvents() {
     get length() {
       return handlers.length
     },
+
     push(fn) {
       handlers.push(fn)
       return function() {
         handlers = handlers.filter(handler => handler !== fn)
       }
     },
+
     call(arg) {
       handlers.forEach(fn => fn && fn(arg))
     }

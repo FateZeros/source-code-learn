@@ -1,4 +1,4 @@
-export { Router, Route } from './react-router'
+export { Router, Route, Switch } from './react-router'
 
 export { default as BrowserRouter } from './react-router-dom/BrowserRouter.js'
 export { default as HashRouter } from './react-router-dom/HashRouter.js'
