@@ -3,6 +3,7 @@ import { pathToRegexp } from 'path-to-regexp'
 function compilePath(path, options) {
   const keys = []
   const regexp = pathToRegexp(path, keys, options)
+  // console.log(regexp, '=== compilePath ===')
   const result = { regexp, keys }
   return result
 }
@@ -18,6 +19,7 @@ function matchPath(pathname, options = {}) {
   const paths = [].concat(path)
 
   return paths.reduce((matched, path) => {
+    // console.log(matched, path, '------ route matchPath ------')
     // 如果 route path !== null && path !== undefined
     if (!path && path !== '') return null
     if (matched) return matched

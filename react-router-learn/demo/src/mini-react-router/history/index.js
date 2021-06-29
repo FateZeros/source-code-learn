@@ -40,6 +40,11 @@ function createBrowserHistory() {
   // 我们这里监听这个事件是为了处理浏览器的前进后退
   window.addEventListener('popstate', handlePop)
 
+  window.addEventListener('hashchange', () => {
+    console.log(111)
+    handlePop()
+  })
+
   // 返回的history上有个listen方法
   const history = {
     listen(listener) {

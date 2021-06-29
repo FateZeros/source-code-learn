@@ -15,7 +15,7 @@ class Route extends Component {
     return (
       <RouterContext.Consumer>
         {context => {
-          console.log(context, '===== Route.js =====')
+          // console.log(context, '===== Route.js =====')
           const props = { ...context }
           const { children } = this.props
 

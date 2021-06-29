@@ -3,8 +3,8 @@ import './app.css'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
-  // Link
+  Route,
+  Link
 } from './mini-react-router'
 import Home from './views/home'
 import About from './views/about'
@@ -17,13 +17,13 @@ function App() {
         <nav>
           <ul className="header">
             <li className="mr40">
-              <div to="/">Home</div>
+              <Link to="/">Home</Link>
             </li>
             <li className="mr40">
-              <div to="/about">About</div>
+              <Link to="/about">About</Link>
             </li>
             <li className="mr40">
-              <div to="/users">Users</div>
+              <Link to="/users">Users</Link>
             </li>
           </ul>
         </nav>
@@ -37,7 +37,7 @@ function App() {
           <Route path="/users">
             <Users />
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <Home />
           </Route>
         </Switch>

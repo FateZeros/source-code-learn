@@ -12,7 +12,7 @@ class Switch extends Component {
     return (
       <RouterContext.Consumer>
         {context => {
-          console.log(context, '--- Switch ---')
+          // console.log(context, '--- Switch ---')
           const location = this.props.location || context.location
           let element = null
           let match = null
@@ -23,15 +23,20 @@ class Switch extends Component {
            */
           React.Children.forEach(this.props.children, child => {
             if (match === null && React.isValidElement(child)) {
-              console.log(child.props, '--- route child props ------')
+              // console.log(child.props, '--- route child props ------')
               element = child
               const path = child.props.path || child.props.from
+              console.log(
+                path,
+                location.pathname,
+                matchPath(location.pathname, child.props),
+                '--- Switch matchPath ---'
+              )
               match = path
                 ? matchPath(location.pathname, child.props)
                 : context.match
             }
           })
-          console.log(React.cloneElement(element, { location }), 111)
           return match ? React.cloneElement(element, { location }) : null
         }}
       </RouterContext.Consumer>

@@ -3,6 +3,11 @@ import React, { Component } from 'react'
 import HistoryContext from './HistoryContext.js'
 import RouterContext from './RouterContext.js'
 
+/**
+ * Router
+ * RouterContext
+ * HistoryContext
+ */
 class Router extends Component {
   constructor(props) {
     super(props)

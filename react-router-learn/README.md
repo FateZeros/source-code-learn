@@ -27,9 +27,24 @@ yarn start
 - [x] Router
   - [x] BroswerRouter
   - [ ] HistoryRouter
-- [ ] Switch
 - [ ] Route
+  - [ ] Route children
+  - [ ] Route component
+  - [ ] Route render
+- [ ] Switch
 - [ ] Link
+- [ ] 404
+- [ ] React Router Hooks
+
+- Router 包裹 React-router 应用
+- Route 定义具体路由，接收路由 path 和对应渲染的组件作为参数。
+- Switch 匹配路由，浏览器匹配路由，渲染第一个匹配路由
+- Link 路由跳转组件
+
+实现 `React-router` 的关键点:
+
+- 1.监听 URL 变更 -> history 库
+- 2.获取对应的新组件
 
 ## 使用 history 库
 
