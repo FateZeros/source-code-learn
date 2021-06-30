@@ -27,12 +27,12 @@ yarn start
 - [x] Router
   - [x] BroswerRouter
   - [ ] HistoryRouter
-- [ ] Route
-  - [ ] Route children
-  - [ ] Route component
-  - [ ] Route render
-- [ ] Switch
-- [ ] Link
+- [x] Route
+  - [x] Route children
+  - [x] Route component
+  - [x] Route render
+- [x] Switch
+- [x] Link
 - [ ] 404
 - [ ] React Router Hooks
 

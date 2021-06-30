@@ -3,7 +3,7 @@ import RouterContext from './RouterContext.js'
 
 /**
  * Route
- * 3种方式
+ * 3种方式 优先级
  * <Route path=""><Component /></Route>
  * <Route path="" component={} />
  * <Route render={} />
@@ -17,11 +17,24 @@ class Route extends Component {
         {context => {
           // console.log(context, '===== Route.js =====')
           const props = { ...context }
-          const { children } = this.props
+          const { children, component, render } = this.props
+          // console.log(children, component, render, 1111)
 
+          /**
+           * route 渲染逻辑
+           * 1. children > component > render
+           */
           return (
             <RouterContext.Provider value={props}>
-              {children}
+              {children
+                ? typeof children === 'function'
+                  ? children(props)
+                  : children
+                : component
+                ? React.createElement(component, props)
+                : render
+                ? render(props)
+                : null}
             </RouterContext.Provider>
           )
         }}

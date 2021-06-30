@@ -26,12 +26,12 @@ class Switch extends Component {
               // console.log(child.props, '--- route child props ------')
               element = child
               const path = child.props.path || child.props.from
-              console.log(
-                path,
-                location.pathname,
-                matchPath(location.pathname, child.props),
-                '--- Switch matchPath ---'
-              )
+              // console.log(
+              //   path,
+              //   location.pathname,
+              //   matchPath(location.pathname, child.props),
+              //   '--- Switch matchPath ---'
+              // )
               match = path
                 ? matchPath(location.pathname, child.props)
                 : context.match

@@ -34,9 +34,12 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+          <Route
+            path="/users"
+            children={() => <div>users-children</div>}
+            component={Users}
+            render={() => <div>user-render</div>}
+          />
           <Route path="/home">
             <Home />
           </Route>

@@ -7,6 +7,9 @@ import RouterContext from './RouterContext.js'
  * Router
  * RouterContext
  * HistoryContext
+ *
+ * Can't call setState on a component that is not yet mounted
+ * 要确认组件是否已挂载
  */
 class Router extends Component {
   constructor(props) {
@@ -15,6 +18,22 @@ class Router extends Component {
     this.state = {
       location: props.history.location
     }
+    this._isMounted = false
+
+    this.historyUnlistener = props.history.listen(location => {
+      if (this._isMounted) {
+        this.setState({ location })
+      }
+    })
+  }
+
+  componentDidMount() {
+    this._isMounted = true
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false
+    this.historyUnlistener()
   }
 
   render() {

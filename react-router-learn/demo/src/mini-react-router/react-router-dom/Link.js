@@ -9,16 +9,15 @@ class Link extends React.Component {
 
   handleLinkClick = e => {
     e.preventDefault()
-    console.log(this.context, 22)
     // this.props.history.push()
     this.context.history.push(this.props.to)
   }
 
   render() {
-    const { to, children } = this.props
+    const { to, children, ...restProps } = this.props
 
     return (
-      <a href={to} onClick={this.handleLinkClick}>
+      <a href={to} {...restProps} onClick={this.handleLinkClick}>
         {children}
       </a>
     )
