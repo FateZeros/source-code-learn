@@ -1,7 +1,8 @@
 import './app.css'
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -31,15 +32,13 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
           <Route
-            path="/users"
-            children={() => <div>users-children</div>}
-            component={Users}
-            render={() => <div>user-render</div>}
+            path="/about"
+            children={() => <div>About-children</div>}
+            component={About}
+            render={() => <div>About-render</div>}
           />
+          <Route path="/users" component={Users} />
           <Route path="/home">
             <Home />
           </Route>

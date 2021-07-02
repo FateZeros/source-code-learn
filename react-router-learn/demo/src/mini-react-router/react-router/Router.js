@@ -12,6 +12,15 @@ import RouterContext from './RouterContext.js'
  * 要确认组件是否已挂载
  */
 class Router extends Component {
+  static computeRootMatch(pathname) {
+    return {
+      path: '/',
+      url: '/',
+      params: {},
+      isExact: pathname === '/'
+    }
+  }
+
   constructor(props) {
     super(props)
 
@@ -41,7 +50,8 @@ class Router extends Component {
       <RouterContext.Provider
         value={{
           history: this.props.history,
-          location: this.state.location
+          location: this.state.location,
+          match: Router.computeRootMatch(this.state.location.pathname)
         }}
       >
         <HistoryContext.Provider

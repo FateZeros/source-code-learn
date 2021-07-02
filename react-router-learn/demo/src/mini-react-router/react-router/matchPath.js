@@ -15,6 +15,7 @@ function compilePath(path, options) {
  */
 function matchPath(pathname, options = {}) {
   const { path } = options
+  console.log(options, '----- matchPath options ----')
 
   const paths = [].concat(path)
 

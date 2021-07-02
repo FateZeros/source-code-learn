@@ -37,7 +37,10 @@ class Switch extends Component {
                 : context.match
             }
           })
-          return match ? React.cloneElement(element, { location }) : null
+          // console.log(match, '---- switch match----')
+          return match
+            ? React.cloneElement(element, { location, computedMatch: match })
+            : null
         }}
       </RouterContext.Consumer>
     )
