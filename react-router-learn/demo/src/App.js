@@ -1,12 +1,12 @@
 import './app.css'
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import {
-  // BrowserRouter as Router,
-  HashRouter as Router,
-  Switch,
-  Route,
-  Link
-} from './mini-react-router'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+// import {
+//   // BrowserRouter as Router,
+//   HashRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from './mini-react-router'
 import Home from './views/home'
 import About from './views/about'
 import Users from './views/users'

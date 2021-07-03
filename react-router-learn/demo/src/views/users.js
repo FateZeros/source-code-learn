@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
-import { Link, Route } from '../mini-react-router'
+// import { Link, Route } from '../mini-react-router'
+import { Link, Route } from 'react-router-dom'
 
 function User(props) {
-  const { match } = props
+  const { match = {} } = props
   return <div>userId - {match.params.id}</div>
 }
 
@@ -17,7 +18,7 @@ function Users() {
         <Link to="/user/2">user2</Link>
       </h3>
 
-      <Route path="/user/:id" children={() => <User />} />
+      <Route path="/user/:id" component={User} />
     </Fragment>
   )
 }
